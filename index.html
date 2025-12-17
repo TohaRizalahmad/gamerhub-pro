@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GamerHub Pro - Toko Peralatan Gaming Premium</title>
+    <meta name="description" content="GamerHub Pro - Toko peralatan gaming premium: RAM, SSD, PC gaming, peripheral dan aksesori.">
+    <meta name="theme-color" content="#0f172a">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header" role="banner">
+        <div class="header-content">
+            <div style="display:flex;align-items:center;gap:.75rem;">
+                <div class="logo"><span aria-hidden="true">🎮</span> GamerHub Pro</div>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Buka menu">☰</button>
+            </div>
+
+            <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main menu">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Produk</a>
+                <a href="#" class="nav-link">Promo</a>
+                <a href="#" class="nav-link">Kontak</a>
+            </nav>
+
+            <button class="cart-btn" id="cartToggleBtn" aria-label="Buka keranjang">
+                <span aria-hidden="true">🛒</span> Keranjang
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+            <h1 id="hero-title">Peralatan Gaming Premium</h1>
+            <p>Upgrade setup gaming Anda dengan produk berkualitas tinggi dari brand terpercaya.</p>
+            <div class="hero-stats" role="list">
+                <div class="stat-item" role="listitem">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Produk</span>
+                </div>
+                <div class="stat-item" role="listitem">
+                    <span class="stat-number">10K+</span>
+                    <span class="stat-label">Pelanggan</span>
+                </div>
+                <div class="stat-item" role="listitem">
+                    <span class="stat-number">4.9⭐</span>
+                    <span class="stat-label">Rating</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="filter-section" aria-label="Filter produk">
+        <div class="filter-card">
+            <div class="filter-header">
+                <h3>Filter Produk</h3>
+                <div class="search-box">
+                    <input id="searchInput" class="search-input" type="text" placeholder="Cari produk..." onkeyup="searchProducts()">
+                </div>
+            </div>
+
+            <div class="filter-buttons" role="toolbar" aria-label="Filter kategori">
+                <button class="filter-btn active" onclick="filterProducts('all', this)">Semua Produk</button>
+                <button class="filter-btn" onclick="filterProducts('ram', this)">RAM</button>
+                <button class="filter-btn" onclick="filterProducts('ssd', this)">SSD</button>
+                <button class="filter-btn" onclick="filterProducts('pc', this)">PC Gaming</button>
+                <button class="filter-btn" onclick="filterProducts('peripherals', this)">Peripheral</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section" aria-labelledby="produk-title">
+        <div class="section-header">
+            <h2 id="produk-title" class="section-title">Produk Terlaris</h2>
+            <select class="sort-select" onchange="sortProducts(this.value)">
+                <option value="default">Urutkan</option>
+                <option value="price-low">Harga Terendah</option>
+                <option value="price-high">Harga Tertinggi</option>
+                <option value="name">Nama A-Z</option>
+            </select>
+        </div>
+
+        <div id="productsContainer" class="products-container" aria-live="polite"></div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+        <div class="modal-content" id="cartModalContent">
+            <div class="modal-header">
+                <h2 id="cartTitle">Keranjang Belanja</h2>
+                <button class="close-btn" id="cartCloseBtn" aria-label="Tutup keranjang">✕</button>
+            </div>
+
+            <div id="cartItems"></div>
+            <div id="cartTotal" class="cart-total"></div>
+        </div>
+    </div>
+
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Tentang GamerHub Pro</h4>
+                <p>Toko peralatan gaming terpercaya dengan produk berkualitas tinggi dan harga kompetitif.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Kategori</h4>
+                <a href="#">RAM Gaming</a>
+                <a href="#">SSD NVMe</a>
+                <a href="#">PC Gaming</a>
+                <a href="#">Peripheral</a>
+            </div>
+            <div class="footer-section">
+                <h4>Layanan</h4>
+                <a href="#">Pembayaran</a>
+                <a href="#">Pengiriman</a>
+                <a href="#">Garansi</a>
+                <a href="#">Customer Service</a>
+            </div>
+            <div class="footer-section">
+                <h4>Kontak</h4>
+                <p>Email: info@gamerhubpro.com</p>
+                <p>WhatsApp: +62 812-3456-7890</p>
+                <p>Jam Operasional: 09:00 - 21:00 WIB</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js">
+    </script>
+</body>
+</html>
